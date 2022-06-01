@@ -1,0 +1,556 @@
+/*
+Theme Name: PHA
+Theme URI: N/A
+Author: Wilson Kahlich
+Author URI: N/A
+Description: Wordpress theme made by Wilson Kahlich for Michael Newman and PHA Consulting
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: black, brown, orange, tan, white, yellow, light, one-column, two-columns, right-sidebar, flexible-width, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, translation-ready
+Text Domain: pha
+*/
+
+/* site-wide */
+/* overrides margins that wordpress automatically adds to block groups that breaks wrapping line styling*/
+.wp-block-columns {
+    margin-bottom: 0px !important;
+}
+
+body {
+    background-color: #84BB44;
+    margin: 3em;
+    padding: 1em;
+}
+
+.main {
+    background-color: white;
+    padding: 3%;
+}
+
+    /*-- header --*/
+/* ul.menu {
+    list-style-type: none;
+    list-style: none;
+    list-style-image: none;
+    text-align:right;
+    display:flex;
+    max-width: 100%;
+    justify-content: space-around;
+} */
+ ul.menu li {
+    display: inline-flex;
+} 
+ 
+ ul.menu a { 
+    color:#000;
+	font-weight: bold;
+	font-size: 24px;
+} 
+.header {
+    background-color: white;
+    padding: 2%;
+}
+
+
+.header-logo {
+    align-content: end;
+}
+
+.header-message {
+    text-align: left;
+    font: normal normal normal 45px Sylfaen;
+}
+
+.menu {
+    color: #000000;
+    text-align: center;
+    font: normal normal bold 25px/30px Verdana;
+    padding: 20px 0px 20px 0px;
+}
+    /* -- */
+
+.page-title {
+    font: normal 50px Sylfaen;
+    margin-bottom: 1em;
+}
+
+a {
+    color: black; /*NOTE: link changes to blue on hover, either change style to account for it or use bootstrap navbar*/
+}
+
+footer {
+    text-align: center;
+    font: normal normal normal normal 20px Verdana;
+    font-size: 20px;
+    padding-top: 0.5em;
+}
+
+hr {
+    background-color: #84BB44;
+    height: 15px;
+    width: 80%;
+}
+
+    /* --wrapping line-- */
+.wrapping-line {
+    position: relative;
+}
+
+.wrapping-line > * > .row:nth-child(even) {
+    border: solid;
+    border-left: none;
+    border-bottom: none;
+    border-color: #57A3E6;
+    border-width: 15px;
+
+}
+
+.wrapping-line > * > .row:nth-child(odd) {
+    border: solid;
+    border-top:none;
+    border-right: none;
+    border-color: #57A3E6;
+    border-width: 15px;
+}
+
+.wrapping-line > * > .row:nth-child(3) {
+    border: solid;
+    border-right: none;
+    border-bottom: none;
+    border-color: #57A3E6;
+    border-width: 15px;
+}
+
+.wrapping-line > * > .row:first-child {
+    border-bottom: none;
+}
+
+.wrapping-line > * > .row:first-child::after { /*weird overlap issue*/
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 90%;
+    width: 10%;
+    border-top: 15px solid #57A3E6;
+}
+
+.wrapping-line > * > .row:last-child:nth-child(even)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 90%;
+    width: 10%;
+    border-bottom: 15px solid #57A3E6;
+}
+
+.wrapping-line > * > .row:last-child:nth-child(odd)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 90%;
+    width: 10%;
+    border-bottom: 15px solid #57A3E6;
+}
+
+    /* ---- */
+
+/* home */
+
+.partial-border { /* this one is specific to this page's design, could be abstracted with multiple options for how the partial borders should be placed*/
+    background-color: white;
+    margin-top: 5em;
+    border-width: 20px;
+    position: relative;
+    border: solid;
+    border-width: 15px;
+    border-color: #57A3E6;
+    border-bottom: none;
+    border-left: none;
+    border-top: none;
+    margin-top: 3%;
+}
+
+.partial-border::after {
+    content: '';
+    position: absolute;
+    left: 40%;
+    width: 60%;
+    border-top: 20px solid #57A3E6;
+}
+
+
+.container {
+    margin-top: 100px;
+    margin-bottom: 100px
+}
+
+.carousel-container {
+	margin-top: 75px !important;
+}
+
+
+#learn-more {
+    text-align: center;
+    font: normal normal bold italic 20px Verdana;
+    background-color: #84BB44;
+    border: none;
+    border-radius: 48px;
+    height: 1.5em;
+    padding: 0 3% 3% 3%;
+}
+
+.services-header {
+    text-align: center;
+    font: normal normal normal normal 50px Sylfaen;
+}
+
+.services-list {
+    text-align: left;
+    font: normal normal normal normal 30px Verdana;
+    padding: 5%;
+    margin: 3%;
+    border: solid;
+    border-color: #57A3E6;
+}
+
+#learn-more-container {
+    text-align: center;
+}
+
+.sales-pitch-inner {
+    border: solid;
+    border-width: 4px;
+    border-color: #57A3E6;
+    margin: auto 3% 0 3%;
+    margin-top: 1em;
+    text-align: center;
+    padding: 3%;
+    font: normal normal normal 30px Verdana;
+}
+
+.sales-pitch-title {
+    margin: 1% auto auto 1%;
+    font: normal normal normal normal 50px Sylfaen;
+}
+
+/* about us */
+
+.headshot {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.bio {
+    padding: 2em;
+}
+
+.team-member {
+    color: #84BB44;
+    font: normal normal bold 35px Verdana;
+}
+
+.title {
+    color: #57A3E6;
+    font: normal normal bold 25px Verdana;
+    margin-left: 40px;
+    margin-bottom: 20px;
+}
+
+.bio-description {
+	font: normal normal normal 25px/30px Verdana;
+}
+
+#bio-wrapper {
+    background-color: white;
+    font: normal normal normal 25px Verdana;
+    padding: 1em;
+}
+
+.team-summary {
+    text-align: center;
+    background-color: white;
+    padding: 3%;
+    margin: 3%;
+    border: 5px solid #57A3E6;
+    font: normal normal normal 25px Verdana;
+}
+
+.team-summary-title {
+    font: normal normal normal 50px Sylfaen;
+}
+
+/* servies */
+
+ul.no-bullets {
+    list-style-type: none;
+    text-align: center;
+    padding: 2%;
+}
+
+    /* bottom left, top right corners */
+.corners {
+    position: relative;
+    font: 40px Verdana;
+    text-align: center;
+    border: solid 20px #57A3E6;
+    border-top: none;
+    border-bottom: none;
+    padding: 2%;
+}
+
+.corners::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 90%;
+    width: 10%;
+    border-bottom: 15px solid #57A3E6;
+}
+
+.corners::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 10%;
+    border-top: 15px solid #57A3E6;
+}
+    /* ---- */
+
+.service-list-intro {
+    font: normal normal normal 25px Verdana;
+    width: 50%;
+	margin-bottom: 30px;
+}
+
+.services-section {
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+.services-section > * {
+	max-width: 100%;
+	width: 100%;
+}
+
+.services-section > * > ul {
+    font: normal normal normal 30px Verdana;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.services-message > * > p {
+    padding: 3%;
+    font: 25px Verdana;
+    text-align: center;
+}
+
+.map > img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+	margin-top: 3em;
+	margin-bottom: 3em;
+}
+
+
+
+/* projects */
+
+    /* --vertical menu-- */
+.main {
+	position: relative !important;
+}
+
+.vertical-menu {
+    width: 20%;
+	max-width: 20%;
+    background-color: #84BB4480;
+    border-radius: 50px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #707070;
+    font: normal 30px Verdana;
+    padding: 2%;
+	z-index: 3;
+	position: absolute;
+	text-align: center;
+	top: 30px;
+	right: 40px;
+}
+
+.vertical-menu > * > ul > a {
+    font: normal 25px Verdana;
+}
+
+.vertical-menu > * > ul {
+	list-style-type: none;
+	padding: 0px;
+}
+    /* ---- */
+
+.project-subsection {
+    padding: 3%;
+}
+
+.project-subtitle {
+    font: normal 50px Sylfaen;
+}
+
+.project-example {
+    margin-left: 40px;
+    margin-bottom: 5%;
+}
+
+.project-example-title {
+    font: normal 40px Sylfaen;
+}
+
+.project-example-section {
+    margin: 1%;
+    font: normal 25px Verdana;
+}
+
+.project-image {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+/* contact us */
+
+.contact-section {
+    text-align: center;
+    background-color: #84BB4480;
+    border-color: #57A3E6;
+    border-radius: 25px;
+    border-style: solid;
+    border-width: 2px;
+    margin-left: 15%;
+    margin-right: 15%;
+    padding: 3%;
+}
+
+.form-group input {
+    margin-bottom: 2em;
+}
+
+textarea {
+    border-color: #57A3E6;
+    border-radius: 25px;
+    border-style: solid;
+    border-width: 2px;
+    background-color: #84BB4480;
+    padding: 1em;
+}
+
+#message {
+    width: 100%;
+}
+
+.contact-section-main {
+    font: normal 35px Sylfaen;
+}
+
+.contact-section-sub {
+    font: normal 25px Verdana;
+}
+
+input[type="text"] {
+    color: grey;
+    border-color: #57A3E6;
+    border-radius: 25px;
+    border-style: solid;
+    background-color: #84BB4480;
+    padding: 1em;
+    border-width: 2px;
+}
+
+input[type="text"]:focus {
+    color: black;
+}
+
+
+
+/* --------X-------ChangedCode--------X-------- */
+
+
+.custom-toggler.navbar-toggler {
+    border-color: white;
+    margin-left: -1rem;
+}
+/* Setting the stroke to green using rgb values (0, 128, 0) */
+  
+.custom-toggler .navbar-toggler-icon {
+    background-image: url(
+"data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.nav-item {
+    padding-right: 8rem;
+}
+
+
+@media(max-width: 1540px) and (min-width: 500px) {
+    ul {
+        padding-left: 7rem !important;
+    }
+}
+
+@media(max-width: 500px) {
+    ul {
+        padding-left: 3.5rem !important;
+    }
+
+    .header {
+        background-color: white;
+        padding: 2%;
+        padding-bottom: 6rem;    
+    }
+
+    .header-img {
+        position: relative;
+        padding-top: 15rem;
+        right: 11rem;
+        top: 5rem;
+    }
+
+    .header-message {
+        font-size: 1.6rem;
+    }
+}
+
+@media(max-width:500px) and (min-height: 683px) {
+  .header-img {
+      margin-left: -3.5rem;
+  } 
+
+  ul {
+    margin-left: 3rem;
+}
+
+  
+}
+
+@media(max-width:500px) and (min-height: 683px) {
+
+    .header-img {
+        position: relative;
+        left: -9.5rem;
+    }
+
+    .header-message {
+        position: relative;
+        left: 2.5rem;
+    }
+
+    ul {
+        margin-left: 0rem;
+    }
+}
+
+#menu-item-189 {
+    padding-left: 1rem !important;
+}
+ 
+
